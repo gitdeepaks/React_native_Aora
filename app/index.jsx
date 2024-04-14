@@ -31,7 +31,7 @@ export default function App() {
             </Text>
             <Image
               source={images.path}
-              className="w-[136px] h-[15px] absolute -bottom-2 -right-2"
+              className="w-[136px] h-[15px] absolute -bottom-2 -right-7"
               resizeMode="contain"
             />
           </View>

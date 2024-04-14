@@ -5,14 +5,14 @@ import { images } from "../../contants";
 import FormField from "../../components/FormField";
 
 const SignIn = () => {
-  const [form, setform] = useState({
+  const [form, setForm] = useState({
     email: "",
     password: "",
   });
   return (
-    <View className="bg-primary h-full">
+    <SafeAreaView className="bg-primary h-full">
       <ScrollView>
-        <SafeAreaView className="w-full justify-center min-h-[85vh]px-4 my-6">
+        <View className="w-full justify-center min-h-[85vh]px-4 my-6">
           <Image
             source={images.logo}
             resizeMode="contain"
@@ -21,10 +21,22 @@ const SignIn = () => {
           <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">
             Log in to Aora
           </Text>
-          <FormField title="Email" value={form.email} />
-        </SafeAreaView>
+          <FormField
+            title="Email"
+            value={form.email}
+            hanChangeText={(e) => setForm({ ...form, email: e })}
+            otherStyles="mt-7"
+            keyBoardType="email-address"
+          />
+          <FormField
+            title="Password"
+            value={form.password}
+            hanChangeText={(e) => setForm({ ...form, password: e })}
+            otherStyles="mt-7"
+          />
+        </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
